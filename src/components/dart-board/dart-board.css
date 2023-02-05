@@ -1,0 +1,61 @@
+#outer-rim {
+  background: black;
+  cursor: pointer;
+  border: 1px solid white;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  color: white;
+  font-family: "American Typewriter";
+  font-size: 1rem;
+  position: relative;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+
+}
+
+ul li {
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  width: 2rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+#s20 {
+  position: absolute;
+  top: 0;
+  left: 9rem;
+}
+
+#s1 {
+  position: absolute;
+  top: 0;
+  left: 9rem;
+  transform: rotate(18deg)
+}
+
+#s3 {
+  position: absolute;
+  bottom: 0;
+  left: 9rem;
+}
+
+#s6 {
+  position: absolute;
+  top: 9rem;
+  right: -0.6rem;
+  transform: rotate(90deg)
+}
+
+#s11 {
+  position: absolute;
+  top: 9.25rem;
+  left: -0.6rem;
+  transform: rotate(-90deg)
+}
+
