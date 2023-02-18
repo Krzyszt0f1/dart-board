@@ -129,12 +129,18 @@ export class DartBoard {
         rotation: 360
       }
     ];
-    return [
-      <button id="outer-rim">{boardScores.map(s => <div style={{
-        left: `${s.x * 10}rem`,
-        top: `calc(20rem - ${s.y * 10}rem)`,
-        transform: `rotate(${s.rotation}deg)`
-      }}>{s.value}</div>)}</button>
-    ]
+    return (
+      <div>
+        <button id="outer-rim">{boardScores.map(s => <div
+          id="scores"
+          style={{
+            left: `${s.x * 16.75}rem`,
+            top: `calc(33.5rem - ${s.y * 16.75}rem)`,
+            transform: `rotate(${s.rotation}deg)`
+          }}>{s.value}</div>)}</button>
+        <button id="_25"></button>
+        <button id="bulls-eye"></button>
+      </div>
+    )
   }
 }
