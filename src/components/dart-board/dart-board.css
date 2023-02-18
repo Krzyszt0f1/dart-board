@@ -8,6 +8,7 @@
   color: white;
   font-family: monospace;
   position: relative;
+  z-index: 1;
 }
 
 #bulls-eye {
@@ -20,6 +21,7 @@
   position: absolute;
   left: 17.8rem;
   top: 17.8rem;
+  z-index: 3;
 }
 
 #_25 {
@@ -32,6 +34,7 @@
   position: absolute;
   left: 17.1rem;
   top: 17.1rem;
+  z-index: 2;
 }
 
 div #scores {
@@ -42,12 +45,9 @@ div #scores {
   font-size: 1rem;
 }
 
-#outer-rim:hover,
-#outer-rim:focus,
-#_25:hover,
-#_25:focus,
-#bulls-eye:hover,
-#bulls-eye:focus
+#outer-rim:active,
+#_25:active,
+#bulls-eye:active
 {
-  opacity: 0.5;
+  background: gray;
 }
