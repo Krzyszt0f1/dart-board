@@ -2,12 +2,12 @@
   background: black;
   cursor: pointer;
   border: 1px solid white;
-  width: 35.5rem;
-  height: 35.5rem;
+  width: 568px;
+  height: 568px;
   border-radius: 50%;
   color: white;
   font-family: monospace;
-  position: relative;
+  position: absolute;
   z-index: 1;
 }
 
@@ -15,34 +15,34 @@
   background: darkred;
   border: 1px solid white;
   cursor: pointer;
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   position: absolute;
-  left: 17.8rem;
-  top: 17.8rem;
-  z-index: 3;
+  left: 285px;
+  top: 285px;
+  z-index: 4;
 }
 
 #_25 {
   background: black;
   border: 1px solid white;
   cursor: pointer;
-  width: 2.52rem;
-  height: 2.52rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: absolute;
-  left: 17.05rem;
-  top: 17.05rem;
-  z-index: 2;
+  left: 273px;
+  top: 273px;
+  z-index: 3;
 }
 
 div #scores {
   position: absolute;
   text-align: center;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
 }
 
 #outer-rim:hover,
@@ -52,8 +52,20 @@ div #scores {
   background: gray;
 }
 
+svg {
+  width: 568px;
+  height: 568px;
+  position: absolute;
+  z-index:2;
+}
+
+g {
+  stroke: white;
+  stroke-width: 1px;
+  position:center;
+}
+
 path:hover {
-  fill:none;
-  pointer-events:all;
-  background: gray;
+  fill: none;
+  pointer-events: all;
 }
