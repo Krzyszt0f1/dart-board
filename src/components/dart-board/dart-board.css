@@ -32,8 +32,8 @@
   height: 2.52rem;
   border-radius: 50%;
   position: absolute;
-  left: 17.1rem;
-  top: 17.1rem;
+  left: 17.05rem;
+  top: 17.05rem;
   z-index: 2;
 }
 
@@ -45,9 +45,15 @@ div #scores {
   font-size: 1rem;
 }
 
-#outer-rim:active,
-#_25:active,
-#bulls-eye:active
+#outer-rim:hover,
+#_25:hover,
+#bulls-eye:hover
 {
+  background: gray;
+}
+
+path:hover {
+  fill:none;
+  pointer-events:all;
   background: gray;
 }
