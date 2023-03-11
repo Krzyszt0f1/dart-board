@@ -57,6 +57,7 @@ svg {
   height: 568px;
   position: absolute;
   z-index:2;
+  transform: rotate(9deg);
 }
 
 g {
@@ -66,6 +67,6 @@ g {
 }
 
 path:hover {
-  fill: none;
+  fill: gray;
   pointer-events: all;
 }
