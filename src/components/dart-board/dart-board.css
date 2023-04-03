@@ -1,14 +1,9 @@
 #outer-rim {
-  background: black;
-  cursor: pointer;
-  border: 1px solid white;
   width: 568px;
   height: 568px;
-  border-radius: 50%;
   color: white;
   font-family: monospace;
   position: absolute;
-  z-index: 1;
 }
 
 #bulls-eye {
@@ -21,7 +16,7 @@
   position: absolute;
   left: 285px;
   top: 285px;
-  z-index: 4;
+  z-index: 3;
 }
 
 #_25 {
@@ -34,7 +29,7 @@
   position: absolute;
   left: 273px;
   top: 273px;
-  z-index: 3;
+  z-index: 2;
 }
 
 div #scores {
@@ -43,9 +38,9 @@ div #scores {
   width: 32px;
   height: 32px;
   font-size: 16px;
+  z-index: 4;
 }
 
-#outer-rim:hover,
 #_25:hover,
 #bulls-eye:hover
 {
@@ -56,7 +51,7 @@ svg {
   width: 568px;
   height: 568px;
   position: absolute;
-  z-index:2;
+  z-index:1;
   transform: rotate(9deg);
 }
 
