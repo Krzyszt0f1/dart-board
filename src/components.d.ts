@@ -9,6 +9,10 @@ export namespace Components {
     interface DartBoard {
     }
 }
+export interface DartBoardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDartBoardElement;
+}
 declare global {
     interface HTMLDartBoardElement extends Components.DartBoard, HTMLStencilElement {
     }
@@ -22,6 +26,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DartBoard {
+        "onThrowValue"?: (event: DartBoardCustomEvent<number>) => void;
     }
     interface IntrinsicElements {
         "dart-board": DartBoard;

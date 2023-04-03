@@ -52,7 +52,7 @@ svg {
   height: 568px;
   position: absolute;
   z-index:1;
-  transform: rotate(9deg);
+  transform: rotate(-9deg);
 }
 
 g {

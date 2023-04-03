@@ -1,4 +1,4 @@
-import {Component, h} from "@stencil/core";
+import {Component, Event, EventEmitter, h} from "@stencil/core";
 
 @Component({
   tag: "dart-board",
@@ -6,6 +6,12 @@ import {Component, h} from "@stencil/core";
   shadow: true
 })
 export class DartBoard {
+  @Event({ bubbles: true, composed: true }) throwValue: EventEmitter<number>;
+
+  onThrowValueSelect(value: number) {
+    console.log(`to jest warte: ${value}`)
+    this.throwValue.emit(value);
+  }
   render () {
     const boardScores: {value: number, x: number, y: number, rotation: number}[] = [
       {
@@ -130,170 +136,111 @@ export class DartBoard {
       }
     ];
 
-    const boardCircularSegments: {path: string, fill: string}[] = [
+    const boardCircularSegments: {path: string, fill: string, value: number}[] = [
       {
         path: "M 284.00 284.00 L 284.00 70.00 A 214 214 0 0 1 350.13 80.47 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 20
       },
       {
         path: "M 284.00 284.00 L 350.13 80.47 A 214 214 0 0 1 409.79 110.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 1
       },
       {
         path: "M 284.00 284.00 L 409.79 110.87 A 214 214 0 0 1 457.13 158.21 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 18
       },
       {
         path: "M 284.00 284.00 L 457.13 158.21 A 214 214 0 0 1 487.53 217.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 4
       },
       {
         path: "M 284.00 284.00 L 487.53 217.87 A 214 214 0 0 1 498.00 284.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 13
       },
       {
         path: "M 284.00 284.00 L 498.00 284.00 A 214 214 0 0 1 487.53 350.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 6
       },
       {
         path: "M 284.00 284.00 L 487.53 350.13 A 214 214 0 0 1 457.13 409.79 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 10
       },
       {
         path: "M 284.00 284.00 L 457.13 409.79 A 214 214 0 0 1 409.79 457.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 15
       },
       {
         path: "M 284.00 284.00 L 409.79 457.13 A 214 214 0 0 1 350.13 487.53 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 2
       },
       {
         path: "M 284.00 284.00 L 350.13 487.53 A 214 214 0 0 1 284.00 498.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 17
       },
       {
         path: "M 284.00 284.00 L 284.00 498.00 A 214 214 0 0 1 217.87 487.53 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 3
       },
       {
         path: "M 284.00 284.00 L 217.87 487.53 A 214 214 0 0 1 158.21 457.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 19
       },
       {
         path: "M 284.00 284.00 L 158.21 457.13 A 214 214 0 0 1 110.87 409.79 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 7
       },
       {
         path: "M 284.00 284.00 L 110.87 409.79 A 214 214 0 0 1 80.47 350.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 16
       },
       {
         path: "M 284.00 284.00 L 80.47 350.13 A 214 214 0 0 1 70.00 284.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 8
       },
       {
         path: "M 284.00 284.00 L 70.00 284.00 A 214 214 0 0 1 80.47 217.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 11
       },
       {
         path: "M 284.00 284.00 L 80.47 217.87 A 214 214 0 0 1 110.87 158.21 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 14
       },
       {
         path: "M 284.00 284.00 L 110.87 158.21 A 214 214 0 0 1 158.21 110.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 9
       },
       {
         path: "M 284.00 284.00 L 158.21 110.87 A 214 214 0 0 1 217.87 80.47 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "black"
+        fill: "black",
+        value: 12
       },
       {
         path: "M 284.00 284.00 L 217.87 80.47 A 214 214 0 0 1 284.00 70.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "white"
+        fill: "white",
+        value: 5
       }
     ];
-    const boardAnnularSegments: {path: string, fill: string}[] = [
-      {
-        path: "M 284.00 284.00 L 284.00 70.00 A 214 214 0 0 1 350.13 80.47 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 350.13 80.47 A 214 214 0 0 1 409.79 110.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 409.79 110.87 A 214 214 0 0 1 457.13 158.21 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 457.13 158.21 A 214 214 0 0 1 487.53 217.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 487.53 217.87 A 214 214 0 0 1 498.00 284.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 498.00 284.00 A 214 214 0 0 1 487.53 350.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 487.53 350.13 A 214 214 0 0 1 457.13 409.79 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 457.13 409.79 A 214 214 0 0 1 409.79 457.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 409.79 457.13 A 214 214 0 0 1 350.13 487.53 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 350.13 487.53 A 214 214 0 0 1 284.00 498.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 284.00 498.00 A 214 214 0 0 1 217.87 487.53 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 217.87 487.53 A 214 214 0 0 1 158.21 457.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 158.21 457.13 A 214 214 0 0 1 110.87 409.79 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 110.87 409.79 A 214 214 0 0 1 80.47 350.13 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 80.47 350.13 A 214 214 0 0 1 70.00 284.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 70.00 284.00 A 214 214 0 0 1 80.47 217.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 80.47 217.87 A 214 214 0 0 1 110.87 158.21 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 110.87 158.21 A 214 214 0 0 1 158.21 110.87 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      },
-      {
-        path: "M 284.00 284.00 L 158.21 110.87 A 214 214 0 0 1 217.87 80.47 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "darkred"
-      },
-      {
-        path: "M 284.00 284.00 L 217.87 80.47 A 214 214 0 0 1 284.00 70.00 L 284.00 284.00 A 0 0  0 0 0 284.00 284.00 Z",
-        fill: "green"
-      }
-    ];
+    const boardAnnularSegments: {path: string, fill: string, value: number}[] =
+      boardCircularSegments.map(segment => ({...segment, fill: segment.fill === "black" ? "darkred" : "green"}));
+
     return (
       <div>
         <div id="outer-rim">{boardScores.map(s => <div
@@ -303,16 +250,42 @@ export class DartBoard {
             top: `calc(536px - ${s.y * 268}px)`,
             transform: `rotate(${s.rotation}deg)`
           }}>{s.value}</div>)}</div>
-        <div id="_25"></div>
-        <div id="bulls-eye"></div>
+        <div id="_25" onMouseOver={this.onThrowValueSelect.bind(this,25)}></div>
+        <div id="bulls-eye" onMouseOver={this.onThrowValueSelect.bind(this,50)}></div>
         <svg>
           <g>
-            <path d="M 0 284 A 284 284 0 1 1 568 284 A 284 284 1 1 1 0 284 Z" />
-            {boardAnnularSegments.map(s => <path d={s.path} fill={s.fill} />)}
+            <path
+              d="M 0 284 A 284 284 0 1 1 568 284 A 284 284 1 1 1 0 284 Z"
+              onMouseOver={this.onThrowValueSelect.bind(this,0)}
+            />
+            {boardAnnularSegments.map(s =>
+              <path
+                d={s.path}
+                onMouseOver={this.onThrowValueSelect.bind(this,s.value * 2)}
+                fill={s.fill}
+              />)}
             {/*translate values were calculated by doing: (1 - scale) * currentPosition, where current position is x,y = 284 */}
-            {boardCircularSegments.map(s => <path d={s.path} fill={s.fill} transform="translate(14.2, 14.2) scale(0.95)" />)}
-            {boardAnnularSegments.map(s => <path d={s.path} fill={s.fill} transform="translate(105, 105) scale(0.63)" />)}
-            {boardCircularSegments.map(s => <path d={s.path} fill={s.fill} transform="translate(119.3, 119.3) scale(0.58)" />)}
+            {boardCircularSegments.map(s =>
+              <path
+                d={s.path}
+                onMouseOver={this.onThrowValueSelect.bind(this,s.value)}
+                fill={s.fill}
+                transform="translate(14.2, 14.2) scale(0.95)"
+              />)}
+            {boardAnnularSegments.map(s =>
+              <path
+                d={s.path}
+                onMouseOver={this.onThrowValueSelect.bind(this,s.value * 3)}
+                fill={s.fill}
+                transform="translate(105, 105) scale(0.63)"
+              />)}
+            {boardCircularSegments.map(s =>
+              <path
+                d={s.path}
+                onMouseOver={this.onThrowValueSelect.bind(this,s.value)}
+                fill={s.fill}
+                transform="translate(119.3, 119.3) scale(0.58)"
+              />)}
           </g>
         </svg>
       </div>
