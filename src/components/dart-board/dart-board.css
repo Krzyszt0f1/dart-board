@@ -1,3 +1,8 @@
+#container {
+  width: 568px;
+  height: 568px;
+}
+
 #outer-rim {
   width: 568px;
   height: 568px;
@@ -7,9 +12,10 @@
 }
 
 #bulls-eye {
+  transition: background 0.3s ease-out;
   background: darkred;
   border: 1px solid white;
-  cursor: pointer;
+  cursor: crosshair;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -20,9 +26,10 @@
 }
 
 #_25 {
+  transition: background 0.3s ease-out;
   background: black;
   border: 1px solid white;
-  cursor: pointer;
+  cursor: crosshair;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -61,7 +68,11 @@ g {
   position:center;
 }
 
+path {
+  transition: fill 0.3s ease-out;
+  cursor: crosshair;
+}
+
 path:hover {
   fill: gray;
-  pointer-events: all;
 }

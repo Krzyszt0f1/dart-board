@@ -6,11 +6,10 @@ import {Component, Event, EventEmitter, h} from "@stencil/core";
   shadow: true
 })
 export class DartBoard {
-  @Event({ bubbles: true, composed: true }) throwValue: EventEmitter<number>;
+  @Event({ bubbles: true, composed: true }) throwValueSelected: EventEmitter<number>;
 
   onThrowValueSelect(value: number) {
-    console.log(`to jest warte: ${value}`)
-    this.throwValue.emit(value);
+    this.throwValueSelected.emit(value);
   }
   render () {
     const boardScores: {value: number, x: number, y: number, rotation: number}[] = [
@@ -242,7 +241,7 @@ export class DartBoard {
       boardCircularSegments.map(segment => ({...segment, fill: segment.fill === "black" ? "darkred" : "green"}));
 
     return (
-      <div>
+      <div id="container">
         <div id="outer-rim">{boardScores.map(s => <div
           id="scores"
           style={{
