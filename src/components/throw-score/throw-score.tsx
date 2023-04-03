@@ -10,9 +10,8 @@ export  class ThrowScore {
 
   @Listen('throwValueSelected', {target: 'body'})
   onStockSymbolSelect(event: CustomEvent) {
-    if (event.detail && event.detail !== this.score) {
-      this.score = event.detail;
-    }
+    console.log(event.detail)
+    this.score = event.detail;
   }
 
   render () {
